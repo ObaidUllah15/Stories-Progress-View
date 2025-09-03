@@ -1,7 +1,7 @@
 StoriesProgressView
 ====
 
-Library that shows a horizontal progress like Instagram stories.
+Library that shows a horizontal progress like Instagram, WhatsApp and Facebook stories.
 /1.0
 [![](https://jitpack.io/ObaidUllah15/Stories-Progress-View.svg)](https://jitpack.io/#ObaidUllah15/Stories-Progress-View)
 
@@ -103,7 +103,7 @@ Add the dependency
 
 ```
 dependencies {
-    implementation("com.github.ObaidUllah15:Stories-Progress-View:1.0
+    implementation("com.github.ObaidUllah15:Stories-Progress-View:1.0")
 }
 
 ```
