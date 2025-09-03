@@ -1,4 +1,7 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'          // << --- ADD This
+}
 
 android {
     namespace = "jp.shts.android.storiesprogressview"
@@ -18,7 +21,37 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'proguard-rules.pro'
+            consumerProguardFiles 'consumer-rules.pro'
         }
+    }
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)        // << --- ADD This
+        }
+    }
+
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_17            // << --- ADD This
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.github.ObaidUllah15'
+            artifactId = 'Stories-Progress-View'
+            version = "1.0"
+            pom {
+                description = 'Library that shows a horizontal progress like Instagram, WhatsApp and Facebook stories.'
+            }
+        }
+    }
+    repositories {               // << --- ADD This
+        mavenLocal()
     }
 }
 
